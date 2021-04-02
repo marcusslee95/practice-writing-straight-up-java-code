@@ -1,9 +1,17 @@
-public class Motorbike{
+class Motorbike{
 
-	int speed;
+	private int speed;
 
-	void start(){
+	public void start(){
 		System.out.println("Motorbike Started");
+	}
+
+	public void setSpeed(int speed){
+		this.speed = speed;
+	}
+
+	public int getSpeed(){
+		return this.speed;
 	}
 
 }
