@@ -7,7 +7,10 @@ class Motorbike{
 	}
 
 	public void setSpeed(int speed){
-		this.speed = speed;
+		if(speed > 0){
+			this.speed = speed;
+		}
+
 	}
 
 	public int getSpeed(){
