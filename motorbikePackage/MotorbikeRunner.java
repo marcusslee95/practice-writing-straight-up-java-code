@@ -11,12 +11,11 @@ class MotorbikeRunner{
 		// System.out.println(harleyDavidson.speed);
 		System.out.println(harleyDavidson.getSpeed());
 
-		int harleyDavidsonSpeed = harleyDavidson.getSpeed();
-		harleyDavidson.setSpeed(harleyDavidsonSpeed + 666);
+		harleyDavidson.increaseSpeedBy(666);
 		System.out.println(harleyDavidson.getSpeed());
 
-		int harleyDavidsonNewSpeed = harleyDavidson.getSpeed();
-		harleyDavidson.setSpeed(harleyDavidsonNewSpeed - 666);
+		harleyDavidson.decreaseSpeedBy(667);
 		System.out.println(harleyDavidson.getSpeed());
+
 	}
 }

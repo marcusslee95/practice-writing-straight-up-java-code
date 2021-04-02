@@ -17,4 +17,13 @@ class Motorbike{
 		return this.speed;
 	}
 
+	public void increaseSpeedBy(int speed){
+		// this.speed = this.speed + speed;
+		setSpeed(this.speed + speed);
+	}
+
+	public void decreaseSpeedBy(int speed){
+		setSpeed(this.speed - speed);
+	}
+
 }
