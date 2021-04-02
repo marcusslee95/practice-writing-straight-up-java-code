@@ -1,7 +1,7 @@
 class MotorbikeRunner{
 
 	public static void main(String[] args){
-		Motorbike harleyDavidson = new Motorbike();
+		Motorbike harleyDavidson = new Motorbike(10000);
 		harleyDavidson.start();
 		// System.out.println(harleyDavidson.speed);
 		System.out.println(harleyDavidson.getSpeed());

@@ -26,4 +26,9 @@ class Motorbike{
 		setSpeed(this.speed - speed);
 	}
 
+	public Motorbike(int speed){
+		this.speed = speed;
+
+	}
+
 }
