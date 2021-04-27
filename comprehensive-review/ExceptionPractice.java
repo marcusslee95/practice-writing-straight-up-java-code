@@ -1,4 +1,4 @@
-public class ExceptionPractice {
+public class ExceptionPractice {//btw exceptions are just errors that happen as your code is running.... the only reason we don't use the word error instead of exception is because in the code world.... errors are used to refer to the errors that you can't handle / if they happen your program Will crash no matter what (i.e. stack overflow) whereas exception refers to something that you can handle to avoid program just crashing / erroring out
 	
 	public static void main(String[] args){
 		//B4: showing the difference in what we have to do for a runtime exception aka. unchecked exception aka... low risk guy. vs. checked exception aka. high risk guy 
