@@ -95,3 +95,72 @@ class NormalInheritanceRunner { //not sure how I'd run this cuz normally I have 
 }
 
 
+//Abstract class practice: when to use abstract classes..... when you have the high level algo for something but want subclasses to provide their unique implementations of the steps in that algo.... can't do this using interfaces because you need to write out high level algo in the body of a method..... but interfaces can't have any implementation i.e. it's methods can't have a body - though this is no longer true w/newest java... cuz now you can provide default implementations in interfaces.... cuz java realized pain developers feel when introduce a new method into an interface and have to add that to every class that implements that interface..... let's conveniently forget about this fact for now.... cuz it just confuses when to use abstract classes. 
+abstract class AbstractRecipe {
+	public void executeRecipe() { //wamt severa; c;asses to all executeRecipe following these three steps.... but want to leave what goes on in those 3 steps up to each class
+		this.doPrep();
+		this.doActualCooking();
+		this.doCleanUp(); 
+	}
+
+	public abstract void doPrep(); // by marking these methods as abstract your saying any class that extends this class has to provide implementation of these methods..... which makes sense for you to force... because they're needed to run the executeRecipe method 
+	public abstract void doActualCooking();
+	public abstract void doCleanUp(); 
+}
+
+class KimchiFriedRiceRecipe extends AbstractRecipe {
+	public abstract void doPrep(){
+		System.out.println("Just look aroudn the fridge... you're bound to find leftover rice, spam, and kimchi");
+		System.out.println("Get sauces you'll use.... like soy sauce, sesame oil");
+		System.out.println();
+	}
+
+	public abstract void doActualCooking(){
+		System.out.println("Throw everything into a wok");
+		System.out.println("Mix until color is right");
+		System.out.println();
+	}
+
+	public abstract void doCleanUp(){
+		System.out.println("Throw wok into dishwasher");
+		System.out.println();
+	}
+
+}
+
+class SteakRecipe extends AbstractRecipe {
+	public abstract void doPrep(){
+		System.out.println("Buy 1 butter block");
+		System.out.println("Buy 1 ribeye");
+		System.out.println("Defrost ribeye");
+		System.out.println("Heat pan");
+		System.out.println();
+	}
+
+	public abstract void doActualCooking(){
+		System.out.println("Melt butter on pan");
+		System.out.println("Cook both sides of steak on pan");
+		System.out.println("Let steak rest");
+		System.out.println();
+	}
+
+	public abstract void doCleanUp(){
+		System.out.println("Throw pan into dishwasher");
+		System.out.println();
+	}
+
+}
+
+class RecipeRunner {
+	public static void main(String[] args) {
+		SteakRecipe steakRecipeInstance = new SteakRecipe(); 
+		steakRecipeInstance.executeRecipe(); 
+
+		KimchiFriedRiceRecipe kimchiFriedRiceRecipeInstance = new KimchiFriedRiceRecipe(); 
+		kimchiFriedRiceRecipeInstance.executeRecipe(); 
+
+
+	}
+}
+
+
