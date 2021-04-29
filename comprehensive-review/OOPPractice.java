@@ -109,19 +109,19 @@ abstract class AbstractRecipe {
 }
 
 class KimchiFriedRiceRecipe extends AbstractRecipe {
-	public abstract void doPrep(){
+	public void doPrep(){
 		System.out.println("Just look aroudn the fridge... you're bound to find leftover rice, spam, and kimchi");
 		System.out.println("Get sauces you'll use.... like soy sauce, sesame oil");
 		System.out.println();
 	}
 
-	public abstract void doActualCooking(){
+	public void doActualCooking(){
 		System.out.println("Throw everything into a wok");
 		System.out.println("Mix until color is right");
 		System.out.println();
 	}
 
-	public abstract void doCleanUp(){
+	public void doCleanUp(){
 		System.out.println("Throw wok into dishwasher");
 		System.out.println();
 	}
@@ -129,7 +129,7 @@ class KimchiFriedRiceRecipe extends AbstractRecipe {
 }
 
 class SteakRecipe extends AbstractRecipe {
-	public abstract void doPrep(){
+	public void doPrep(){
 		System.out.println("Buy 1 butter block");
 		System.out.println("Buy 1 ribeye");
 		System.out.println("Defrost ribeye");
@@ -137,14 +137,14 @@ class SteakRecipe extends AbstractRecipe {
 		System.out.println();
 	}
 
-	public abstract void doActualCooking(){
+	public void doActualCooking(){
 		System.out.println("Melt butter on pan");
 		System.out.println("Cook both sides of steak on pan");
 		System.out.println("Let steak rest");
 		System.out.println();
 	}
 
-	public abstract void doCleanUp(){
+	public void doCleanUp(){
 		System.out.println("Throw pan into dishwasher");
 		System.out.println();
 	}
@@ -242,5 +242,35 @@ class RealAlgo implements DesciptionOfWhatRealAlgoWillDo { //the class you end u
 }
 
 
+//more practice w/interfaces 
+interface Flyable { //reminder on what purpose of interfaces is..... it's for abstraction.... if a class implements this Flyable interface.... i immediately know it will have these behaviors / methods.... 
+	void fly();
+}
+
+class Bird implements Flyable {
+	public void fly(){
+		System.out.println("Flap wings");
+	}
+}
+
+class Airplane implements Flyable {
+	public void fly(){
+		System.out.println("Turn engines on");
+		System.out.println("Speed through runway");
+		System.out.println("Lift off");
+	}
+}
+
+class FlyableRunner {
+	public static void main(String[] args) {
+		Flyable anythingThatCanFly = new Airplane();
+		// Flyable anythingThatCanFly = new Bird();
+		anythingThatCanFly.fly();
+	}
+}
+
+public class OOPPractice { 
+
+}
 
 
