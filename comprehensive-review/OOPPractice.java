@@ -223,3 +223,24 @@ class GamingActionsRunner {
 	}
 }
 
+
+//in real world.... its's standard to share an interface of what the class you're creating will do.... so that other teams can just create their own dummy version of that class to see if their code will work w/the class you end up creating... even before you finish creating your class 
+interface DesciptionOfWhatRealAlgoWillDo { //this is the interface you share w/other teams describing that you'll be creating a class w/these methods 
+	int applyTheAlogirthmOnGivenInputs(int num1, int num2); 
+}
+
+class DummyAlgo implements DesciptionOfWhatRealAlgoWillDo { // the dummy version of your class that other teams create to test that their code will work with the class you'll eventually create.... even before you finish actually creating it
+	public int applyTheAlogirthmOnGivenInputs(int num1, int num2){
+		return 2; //some dummy implementation it honestly doesn't matter what it is 
+	}
+}
+
+class RealAlgo implements DesciptionOfWhatRealAlgoWillDo { //the class you end up creating - it implements all the methods you promised it would aka. the methods in the interface you shared 
+	public int applyTheAlogirthmOnGivenInputs(int num1, int num2){
+		return num1 * num2; 
+	}
+}
+
+
+
+
