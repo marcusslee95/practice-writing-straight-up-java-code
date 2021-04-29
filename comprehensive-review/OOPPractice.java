@@ -164,3 +164,61 @@ class RecipeRunner {
 }
 
 
+//Interface practice..... an interface really is just a group of methods.... so it will simplify things if you think about them that way..... (though it can define final constants - these aren't instance properites)
+//all methods in interfaces are abstract aka. don't have an implementation and 2. public... -> w/java8 though this rule is broken.... you can now provide default implementations for methods 
+interface GamingActions {
+	void hitUpButton();
+	void hitDownButton();
+	void hitLeftButton();
+	void hitRightButton(); 
+}
+
+class ChessGame implements GamingActions {
+	public void hitUpButton(){
+		System.out.println("Move piece forward");
+	}
+
+	public void hitDownButton(){
+		System.out.println("Move piece backward");
+	}
+
+	public void hitLeftButton(){
+		System.out.println("Move piece to the left");
+	}
+
+	public void hitRightButton(){
+		System.out.println("Move piece to the right");
+	}
+}
+
+class MarioGame implements GamingActions {
+	public void hitUpButton(){
+		System.out.println("Jump");
+		System.out.println("Make weird mario noise");
+	}
+
+	public void hitDownButton(){
+		System.out.println("Crouch");
+	}
+
+	public void hitLeftButton(){
+		System.out.println("Move backward");
+	}
+
+	public void hitRightButton(){
+		System.out.println("Move forward");
+	}
+}
+
+class GamingActionsRunner {
+	public static void main(String[] args) {
+		//HERE'S AN EXAMPLE OF POLYMORPHISM: AKA. SAME CODE CAN HAVE DIFFERENT BEHAVIOR..... as a result of MarioGame and ChessGame both being able to take on form of GamingActions interface.... we can put both inside an array of objects of type GamingActions.....
+		GamingActions[] games = {new MarioGame(), new ChessGame(), new ChessGame(), new MarioGame()}; 
+		for (GamingActions game : games) {
+			game.hitUpButton();
+			game.hitDownButton();
+			game.hitLeftButton();
+			game.hitRightButton();
+		}
+	}
+}
